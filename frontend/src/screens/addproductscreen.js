@@ -23,7 +23,7 @@ const Addproductscreen = () => {
         alert("Product Added Successfully")
         window.location.href = '/admin'
         await axios.post(
-          "http://localhost:5000/api/products/upload",
+          "/api/products/upload",
           { name,
             price,
             image,

@@ -29,7 +29,7 @@ const Registerscreen = () => {
       alert('Registered successfully. Please Signin to Continue.')
       window.location.href = '/login'
       await axios.post(
-        'http://localhost:5000/api/user/register',
+        '/api/user/register',
         { name, email, password }
       )
     }

@@ -23,13 +23,13 @@ const AdminOrderScreen = ({match}) => {
       const Delivered = async(data1,data2,data3)=>{
           const isdelivered = true
           
-          const { data } = await axios.get(`http://localhost:5000/api/products/${data2}`)
+          const { data } = await axios.get(`/api/products/${data2}`)
            qty = data.countInStock
           var countInStock = (qty - data1)
-         await axios.put(`http://localhost:5000/api/order/deliver/${data3}`, {isdelivered,})
+         await axios.put(`/api/order/deliver/${data3}`, {isdelivered,})
           
          await axios.put(
-           `http://localhost:5000/api/products/change/${data2}`,
+           `/api/products/change/${data2}`,
             { 
               countInStock,
             })
@@ -37,7 +37,7 @@ const AdminOrderScreen = ({match}) => {
       }
       const clear = async(data)=>{
         window.location.reload()
-        await axios.delete(`http://localhost:5000/api/order/${data}`)
+        await axios.delete(`/api/order/${data}`)
         }
       return(
         <Row >

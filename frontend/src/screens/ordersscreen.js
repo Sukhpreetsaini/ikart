@@ -25,7 +25,7 @@ const OrderScreen = () => {
       const cancel = async(data)=>{
         const cancel = true
         window.location.reload()
-        await axios.put(`http://localhost:5000/api/order/cancel/${data}`, {cancel,})
+        await axios.put(`/api/order/cancel/${data}`, {cancel,})
     }
       return(
         <Row className="justify-content-md-center" >

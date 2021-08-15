@@ -18,7 +18,7 @@ const placeOrderScreen = () => {
             const productqty = value
             const isdelivered = false
              axios.post(
-                "http://localhost:5000/api/order/add",
+                "/api/order/add",
                 { userid,
                   productid,
                   productqty,
