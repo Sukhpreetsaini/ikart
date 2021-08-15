@@ -22,7 +22,7 @@ const AdminOrderScreen = ({match}) => {
       }, [])
       const Delivered = async(data1,data2,data3)=>{
           const isdelivered = true
-          window.location.reload()
+          
           const { data } = await axios.get(`/api/products/${data2}`)
            qty = data.countInStock
           var countInStock = (qty - data1)
@@ -34,7 +34,7 @@ const AdminOrderScreen = ({match}) => {
             { 
               countInStock,
            })
-            
+           window.location.reload()
       }
       const clear = async(data)=>{
         window.location.reload()
