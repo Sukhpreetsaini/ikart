@@ -22,17 +22,18 @@ const AdminOrderScreen = ({match}) => {
       }, [])
       const Delivered = async(data1,data2,data3)=>{
           const isdelivered = true
-          
+          window.location.reload()
           const { data } = await axios.get(`/api/products/${data2}`)
            qty = data.countInStock
           var countInStock = (qty - data1)
+          console.log(countInStock)
          await axios.put(`/api/order/deliver/${data3}`, {isdelivered,})
           
          await axios.put(
            `/api/products/change/${data2}`,
             { 
               countInStock,
-            })
+           })
             
       }
       const clear = async(data)=>{
