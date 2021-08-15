@@ -10,6 +10,7 @@ import cors from "cors"
 
 dotenv.config();
 const __dirname = path.resolve()
+const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors())
 connectDB();
@@ -21,7 +22,9 @@ app.use('/api/user',userroute);
 app.use('/api/user/:id',userroute);
 app.use('/api/order/:id',orderroute);
 app.use('/api/order',orderroute);
-app.listen(5000,console.log("running"));
+app.listen(port, function() {
+  console.log("Server started.......");
+})
 app.use(express.static(path.join(__dirname, '/frontend/build')))
 
 app.get('*', (req, res) =>
